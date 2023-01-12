@@ -470,6 +470,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "simple_dart_utils_date_time",
+      "rootUri": "../packages/simple_dart_utils_date_time",
+      "packageUri": "",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "simple_dart_view_controller",
       "rootUri": "../packages/simple_dart_view_controller",
       "packageUri": "",
@@ -554,7 +560,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-23T09:09:33.893368Z",
+  "generated": "2023-01-12T10:37:48.738435Z",
   "generator": "pub",
   "generatorVersion": "2.18.3"
 }

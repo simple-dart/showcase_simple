@@ -30,12 +30,14 @@ class ObjectTableView extends View {
       ..createColumn('column 1', 100, sortable: true)
       ..createColumn('column 2', 100, sortable: true)
       ..createColumn('column 3', 100, sortable: true);
+    final rowsData = <ObjectTableObj>[];
     for (var i = 0; i < 100; i++) {
-      ret.createObjectRow(ObjectTableObj()
+      rowsData.add(ObjectTableObj()
         ..column1 = 'string $i'
         ..column2 = i
         ..column3 = DateTime.now().add(-Duration(days: i)));
     }
+    ret.objects = rowsData;
     return ret;
   }
 }

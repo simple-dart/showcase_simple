@@ -71,8 +71,5 @@ class ExampleRepositoryTable extends RepositoryTable<ExampleRepositoryObject> {
     createColumn('column1', 100);
     createColumn('column2', 100);
     createColumn('column3', 100);
-    onLoadMore.listen((event) {
-      headerLabel.caption = 'Loaded: ${exampleRepository.loadedCount}/${exampleRepository.totalCount}';
-    });
   }
 }

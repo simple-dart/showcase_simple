@@ -28,13 +28,13 @@ dependencies:
   simple_dart_load_indicator: ^0.0.1
   simple_dart_modal_controller: ^0.0.1
   simple_dart_num_field: ^0.0.3
-  simple_dart_object_table: ^0.0.2
+  simple_dart_object_table: ^0.0.4
   simple_dart_pager: ^0.0.3
   simple_dart_radio_field: ^0.0.1
   simple_dart_repository_table: ^0.0.1
   simple_dart_select_field: ^0.0.1
   simple_dart_starter_simple: ^0.0.1
-  simple_dart_table: ^0.0.3
+  simple_dart_table: ^0.0.5
   simple_dart_tabs_panel: ^0.0.1
   simple_dart_tabs_panel_with_limit: ^0.0.1
   simple_dart_text_area_field: ^0.0.1

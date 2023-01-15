@@ -101,7 +101,7 @@
       "name": "checked_yaml",
       "rootUri": "../packages/checked_yaml",
       "packageUri": "",
-      "languageVersion": "2.12"
+      "languageVersion": "2.18"
     },
     {
       "name": "code_builder",
@@ -215,7 +215,7 @@
       "name": "mime",
       "rootUri": "../packages/mime",
       "packageUri": "",
-      "languageVersion": "2.12"
+      "languageVersion": "2.18"
     },
     {
       "name": "package_config",
@@ -560,7 +560,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-01-12T10:37:48.738435Z",
+  "generated": "2023-01-15T08:33:52.661667Z",
   "generator": "pub",
   "generatorVersion": "2.18.3"
 }

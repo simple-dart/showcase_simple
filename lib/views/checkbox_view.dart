@@ -20,6 +20,9 @@ class CheckboxView extends View {
           ..value = true,
         Checkbox()..caption = 'Option 2',
         Checkbox()
+          ..caption = 'Indeterminate'
+          ..isIndeterminate = true,
+        Checkbox()
           ..caption = 'Disabled'
           ..disabled = true,
       ]));

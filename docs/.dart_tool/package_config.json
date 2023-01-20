@@ -380,6 +380,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "simple_dart_loadable_object_table",
+      "rootUri": "../packages/simple_dart_loadable_object_table",
+      "packageUri": "",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "simple_dart_modal_controller",
       "rootUri": "../packages/simple_dart_modal_controller",
       "packageUri": "",
@@ -406,12 +412,6 @@
     {
       "name": "simple_dart_radio_field",
       "rootUri": "../packages/simple_dart_radio_field",
-      "packageUri": "",
-      "languageVersion": "2.18"
-    },
-    {
-      "name": "simple_dart_repository_table",
-      "rootUri": "../packages/simple_dart_repository_table",
       "packageUri": "",
       "languageVersion": "2.18"
     },
@@ -560,7 +560,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-01-15T08:33:52.661667Z",
+  "generated": "2023-01-20T12:23:55.888977Z",
   "generator": "pub",
   "generatorVersion": "2.18.3"
 }

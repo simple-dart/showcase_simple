@@ -1,11 +1,13 @@
 import 'package:simple_dart_headed_panel/simple_dart_headed_panel.dart';
-import 'package:simple_dart_repository_table/simple_dart_repository_table.dart';
+import 'package:simple_dart_loadable_object_table/simple_dart_loadable_object_table.dart';
+import 'package:simple_dart_object_table/simple_dart_object_table.dart';
 import 'package:simple_dart_starter_simple/simple_dart_starter_simple.dart';
+import 'package:simple_dart_table/simple_dart_table.dart';
 
 class RepositoryTableView extends View {
   RepositoryTableView() {
-    id = 'repository_table';
-    caption = 'RepositoryTable';
+    id = 'loadable_object_table';
+    caption = 'LoadableObjectTable';
     fullSize();
     fillContent = true;
     padding = '10px';
@@ -13,11 +15,13 @@ class RepositoryTableView extends View {
     fillContent = true;
     fullSize();
     spacing = '10px';
-    final exampleRepositoryTable = ExampleRepositoryTable()..loadMore();
+    final exampleObjectTable = ExampleObjectTable();
+    final exampleRepository = ExampleRepository();
+    LoadableObjectTable<ExampleRepositoryObject>(exampleObjectTable, exampleRepository.loadNext).handleLoadNext();
     addAll([
       HeadedPanel()
         ..caption = 'RepositoryTable'
-        ..addContent([exampleRepositoryTable])
+        ..addContent([exampleObjectTable])
         ..fillContent = true,
     ]);
   }
@@ -37,7 +41,7 @@ class ExampleRepository {
   int loadedCount = 0;
   int pageSize = 100;
 
-  Future<List<ExampleRepositoryObject>> loadMore() async {
+  Future<List<ExampleRepositoryObject>> loadNext() async {
     var lastId = 0;
     totalCount = 10000000000;
     final parsedAfter = lastKey;
@@ -62,14 +66,20 @@ List<dynamic> exampleObjectRowAdapter(ExampleRepositoryObject object) => [
       object.column3,
     ];
 
-ExampleRepository exampleRepository = ExampleRepository();
-
-class ExampleRepositoryTable extends RepositoryTable<ExampleRepositoryObject> {
-  ExampleRepositoryTable() : super(exampleRepository.loadMore, exampleObjectRowAdapter) {
+class ExampleObjectTable extends ObjectTable<ExampleRepositoryObject> {
+  ExampleObjectTable() : super(exampleObjectRowAdapter) {
     fillContent = true;
     fullSize();
-    createColumn('column1', 100);
-    createColumn('column2', 100);
-    createColumn('column3', 100);
+    initColumns([
+      TableColumnDescr()
+        ..caption = 'column 1'
+        ..width = 100,
+      TableColumnDescr()
+        ..caption = 'column 2'
+        ..width = 100,
+      TableColumnDescr()
+        ..caption = 'column 3'
+        ..width = 100,
+    ]);
   }
 }

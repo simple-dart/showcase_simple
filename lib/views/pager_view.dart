@@ -22,10 +22,17 @@ class PagerView extends View implements Pageable {
     fillContent = true;
     showInNavBar = true;
     fullSize();
-    simpleTable
-      ..createColumn('column 1', 100)
-      ..createColumn('column 2', 100)
-      ..createColumn('column 3', 100);
+    simpleTable.initColumns([
+      TableColumnDescr()
+        ..caption = 'column 1'
+        ..width = 100,
+      TableColumnDescr()
+        ..caption = 'column 2'
+        ..width = 100,
+      TableColumnDescr()
+        ..caption = 'column 3'
+        ..width = 100,
+    ]);
     pager.init(this);
     add(HeadedPanel()
       ..caption = 'Pager'

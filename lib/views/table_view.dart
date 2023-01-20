@@ -32,11 +32,25 @@ class TableView extends View {
     final ret = Table()
       ..width = '400px'
       ..fillContent = true
-      ..createColumn('column 1', 100, sortable: true)
-      ..createColumn('column 2', 100, sortable: true)
-      ..createColumn('column 3', 100)
-      ..createColumn('column 4', 100)
-      ..createColumn('column 5', 100);
+      ..initColumns([
+        TableColumnDescr()
+          ..caption = 'column 1'
+          ..width = 100
+          ..sortable = true,
+        TableColumnDescr()
+          ..caption = 'column 2'
+          ..width = 100
+          ..sortable = true,
+        TableColumnDescr()
+          ..caption = 'column 3'
+          ..width = 100,
+        TableColumnDescr()
+          ..caption = 'column 4'
+          ..width = 100,
+        TableColumnDescr()
+          ..caption = 'column 5'
+          ..width = 100,
+      ]);
     for (var i = 0; i < 100; i++) {
       ret
         ..createRow(['val1', 1, 'val3', 'val4', 'val5'])
@@ -49,11 +63,23 @@ class TableView extends View {
   Table createTableWithHeaderCopy() {
     final ret = Table()
       ..fillContent = true
-      ..createColumn('column 1', 100)
-      ..createColumn('column 2', 100)
-      ..createColumn('column 3', 100)
-      ..createColumn('column 4', 100)
-      ..createColumn('column 5', 100);
+      ..initColumns([
+        TableColumnDescr()
+          ..caption = 'column 1'
+          ..width = 100,
+        TableColumnDescr()
+          ..caption = 'column 2'
+          ..width = 100,
+        TableColumnDescr()
+          ..caption = 'column 3'
+          ..width = 100,
+        TableColumnDescr()
+          ..caption = 'column 3'
+          ..width = 100,
+        TableColumnDescr()
+          ..caption = 'column 5'
+          ..width = 100,
+      ]);
     for (var i = 0; i < 100; i++) {
       ret
         ..createRow([

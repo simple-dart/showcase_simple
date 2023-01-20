@@ -1,18 +1,17 @@
 import 'package:simple_dart_headed_panel/simple_dart_headed_panel.dart';
 import 'package:simple_dart_object_table/simple_dart_object_table.dart';
 import 'package:simple_dart_starter_simple/simple_dart_starter_simple.dart';
+import 'package:simple_dart_table/simple_dart_table.dart';
 
 class ObjectTableView extends View {
   ObjectTableView() {
     id = 'object_table';
     caption = 'ObjectTable';
     fullSize();
-    fillContent = true;
     padding = '10px';
+    spacing = '10px';
     vertical = true;
     fillContent = true;
-    fullSize();
-    spacing = '10px';
     final objectTable = createObjectTable();
     addAll([
       HeadedPanel()
@@ -24,20 +23,32 @@ class ObjectTableView extends View {
   }
 
   ObjectTable createObjectTable() {
-    final ret = ObjectTable<ObjectTableObj>(objectRowAdapter, selectable: true)
+    final ret = ObjectTable<ObjectTableObj>(objectRowAdapter)
       ..fullSize()
       ..fillContent = true
-      ..createColumn('column 1', 100, sortable: true)
-      ..createColumn('column 2', 100, sortable: true)
-      ..createColumn('column 3', 100, sortable: true);
-    final rowsData = <ObjectTableObj>[];
+      ..initColumns([
+        TableColumnDescr()
+          ..caption = 'column 1'
+          ..width = 100
+          ..sortable = true,
+        TableColumnDescr()
+          ..caption = 'column 2'
+          ..width = 100
+          ..sortable = true,
+        TableColumnDescr()
+          ..caption = 'column 3'
+          ..width = 100
+          ..sortable = true,
+      ])
+      ..checkboxVisible = true;
+    final objects = <ObjectTableObj>[];
     for (var i = 0; i < 100; i++) {
-      rowsData.add(ObjectTableObj()
+      objects.add(ObjectTableObj()
         ..column1 = 'string $i'
         ..column2 = i
         ..column3 = DateTime.now().add(-Duration(days: i)));
     }
-    ret.objects = rowsData;
+    ret.objects = objects;
     return ret;
   }
 }

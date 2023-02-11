@@ -2,6 +2,12 @@ import 'package:simple_dart_headed_panel/simple_dart_headed_panel.dart';
 import 'package:simple_dart_select_field/simple_dart_select_field.dart';
 import 'package:simple_dart_starter_simple/simple_dart_starter_simple.dart';
 
+class SelectableObject {
+  String name = '';
+
+  SelectableObject(this.name);
+}
+
 class SelectFieldView extends View {
   SelectFieldView() {
     id = 'select_field';
@@ -16,13 +22,13 @@ class SelectFieldView extends View {
         ..caption = 'Single'
         ..width = '300px'
         ..addContent([
-          SelectField()..initOptions(['option1', 'option2', 'option3', 'option4', 'option5'])
+          SelectField<String>()..initOptions(['option1', 'option2', 'option3', 'option4', 'option5'])
         ]),
       HeadedPanel()
         ..caption = 'Single disabled'
         ..width = '300px'
         ..addContent([
-          SelectField()
+          SelectField<String>()
             ..initOptions(['option1', 'option2', 'option3', 'option4', 'option5'])
             ..disabled = true
         ]),
@@ -30,7 +36,7 @@ class SelectFieldView extends View {
         ..caption = 'Multi'
         ..width = '300px'
         ..addContent([
-          SelectField()
+          SelectField<String>()
             ..size = 4
             ..multiple = true
             ..initOptions(['option1', 'option2', 'option3', 'option4', 'option5'])
@@ -39,12 +45,49 @@ class SelectFieldView extends View {
         ..caption = 'Multi disabled'
         ..width = '300px'
         ..addContent([
-          SelectField()
+          SelectField<String>()
             ..multiple = true
             ..size = 4
             ..initOptions(['option1', 'option2', 'option3', 'option4', 'option5'])
-            ..disabled = true
-        ])
+            ..disabled = true,
+        ]),
+      HeadedPanel()
+        ..caption = 'Object Single'
+        ..width = '300px'
+        ..addContent([
+          SelectField<SelectableObject>()
+            ..adapter = ((obj) => obj.name)
+            ..initOptions([
+              SelectableObject('object1'),
+              SelectableObject('object2'),
+              SelectableObject('object3'),
+              SelectableObject('object4')
+            ])
+            ..onValueChange.listen((value) {
+              for (var i = 0; i < value.newValue.length; i++) {
+                print(value.newValue[i].name);
+              }
+            })
+        ]),
+      HeadedPanel()
+        ..caption = 'Object Multi'
+        ..width = '300px'
+        ..addContent([
+          SelectField<SelectableObject>()
+            ..adapter = ((obj) => obj.name)
+            ..multiple = true
+            ..initOptions([
+              SelectableObject('object1'),
+              SelectableObject('object2'),
+              SelectableObject('object3'),
+              SelectableObject('object4')
+            ])
+            ..onValueChange.listen((value) {
+              for (var i = 0; i < value.newValue.length; i++) {
+                print(value.newValue[i].name);
+              }
+            })
+        ]),
     ]);
   }
 }

@@ -22,8 +22,8 @@ class ContextMenuView extends View {
           Button()
             ..caption = 'Show context menu'
             ..onClick.listen((event) => {
-                  contextMenu
-                      .showContextMenu(['Action 1', 'Action 2', 'Action 3', 'Action 4'], event.client.x, event.client.y)
+                  contextMenu.showContextMenu(
+                      ['Action 1', 'Action 2', 'Action 3', 'Action 4'], event.client.x.toInt(), event.client.y.toInt())
                 })
         ])
     ]);

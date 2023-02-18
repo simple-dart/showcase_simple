@@ -17,36 +17,23 @@ class RadioView extends View {
         ..width = '300px'
         ..wrap = true
         ..addContent([
-          RadioField()
-            ..groupName = 'row'
-            ..addRadioButton('opt1', 'option1')
-            ..addRadioButton('opt2', 'option2')
-            ..addRadioButton('opt3', 'option3')
-            ..addRadioButton('opt4', 'option4')
+          RadioField('row')..initOptions(['option1', 'option2', 'option3', 'option4'])
         ]),
       HeadedPanel()
         ..caption = 'Column layout'
         ..width = '300px'
         ..addContent([
-          RadioField()
+          RadioField('vertical')
             ..vertical = true
-            ..groupName = 'vertical'
-            ..addRadioButton('opt1', 'option1')
-            ..addRadioButton('opt2', 'option2')
-            ..addRadioButton('opt3', 'option3')
-            ..addRadioButton('opt4', 'option4')
+            ..initOptions(['option1', 'option2', 'option3', 'option4'])
         ]),
       HeadedPanel()
         ..caption = 'Disabled'
         ..width = '300px'
         ..addContent([
-          RadioField()
+          RadioField('disabled')
             ..vertical = true
-            ..groupName = 'vertical'
-            ..addRadioButton('opt1', 'option1')
-            ..addRadioButton('opt2', 'option2')
-            ..addRadioButton('opt3', 'option3')
-            ..addRadioButton('opt4', 'option4')
+            ..initOptions(['option1', 'option2', 'option3', 'option4'])
             ..disabled = true
         ])
     ]);

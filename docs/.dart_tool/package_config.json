@@ -326,6 +326,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "simple_dart_dropdown",
+      "rootUri": "../packages/simple_dart_dropdown",
+      "packageUri": "",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "simple_dart_file_picker",
       "rootUri": "../packages/simple_dart_file_picker",
       "packageUri": "",
@@ -560,7 +566,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-02-14T07:56:13.417279Z",
+  "generated": "2023-02-18T11:04:53.921443Z",
   "generator": "pub",
   "generatorVersion": "2.19.1"
 }

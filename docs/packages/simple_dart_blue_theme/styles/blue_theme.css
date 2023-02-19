@@ -23,7 +23,6 @@ select:focus {
 input {
   border: 1px solid transparent;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.2);
   color: #f8eef9;
 }
 
